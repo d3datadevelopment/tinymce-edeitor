@@ -1,4 +1,4 @@
-# O3-Shop TinyMCE WYSIWYG Editor
+# O3-Shop TinyMCE WYSIWYG Editor for OXID eShop
 
 This module integrates the [TinyMCE WYSIWYG editor](https://www.tiny.cloud/tinymce/) in the OXID shop backend.
 
