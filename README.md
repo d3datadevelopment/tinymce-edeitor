@@ -25,19 +25,15 @@ $ vendor/bin/oe-console oe:module:activate o3-tinymce-editor
 
 Activate the module.
 
-## Developer installation
+## Contributing
 
-```bash
-$ git clone https://gitlab.o3-shop.com/o3/tinymce-editor/ source/modules/o3-shop/tinymce-editor
-$ composer config repositories.o3-shop/tinymce-editor path ./source/modules/o3-shop/tinymce-editor
-$ composer require o3-shop/tinymce-editor:*
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue. Don't forget to give the project a star! Thanks again!
 
-$ vendor/bin/oe-console oe:module:install source/modules/o3-shop/tinymce-editor
-```
-
-## Issues
-
-To report issues with the module, please use the [O3-Shop bugtracking system](https://issues.o3-shop.com/) - module TinyMCE Editor project.
+- Fork the Project
+- Create your Feature Branch (git checkout -b feature/AmazingFeature)
+- Commit your Changes (git commit -m 'Add some AmazingFeature')
+- Push to the Branch (git push origin feature/AmazingFeature)
+- Open a Pull Request
 
 ## License
 
@@ -50,31 +46,13 @@ GPLv3, see [LICENSE file](LICENSE).
 
 ## Further licenses
 
-### TinyMCE editor [MIT]
-(https://github.com/tinymce/tinymce-dist - status: 2023-04-07)
+### TinyMCE editor [GPL v2]
+(https://github.com/tinymce/tinymce-dist - status: 2024-12-02)
 
 ```
-MIT License
+TinyMCE – https://github.com/tinymce/tinymce Copyright (c) 2024, Ephox Corporation DBA Tiny Technologies, Inc.
 
-Copyright (c) 2022 Ephox Corporation DBA Tiny Technologies, Inc.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Licensed under the terms of GNU General Public License Version 2 or later.
 ```
 
 ### Roxy file manager [GPL v3]
