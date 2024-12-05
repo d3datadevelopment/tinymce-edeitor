@@ -1,11 +1,14 @@
 parameters:
   scanFiles:
     - .ide-helper.php
-    - ../../o3-shop/shop-ce/source/oxfunctions.php
+    - ../../oxid-esales/oxideshop-ce/source/bootstrap.php
+    - ../../oxid-esales/oxideshop-ce/source/oxfunctions.php
+    - ../../oxid-esales/oxideshop-ce/source/overridablefunctions.php
   paths:
     - Application
-  level: 9
-  phpVersion: 70400
+    - assets/out/fileman
+  level: 6
+  phpVersion: 80000
   ignoreErrors:
     - '#Constant FILES_ROOT not found.#'
     - '#Constant SESSION_PATH_KEY not found.#'
@@ -16,8 +19,3 @@ parameters:
     - '#Constant FILEPERMISSIONS not found.#'
     - '#Constant MAX_IMAGE_HEIGHT not found.#'
     - '#Constant MAX_IMAGE_WIDTH not found.#'
-    - '#Method RoxyImage\:\:OutputImage\(\) has no return type specified.#'
-    - '#Method RoxyImage\:\:OutputImage\(\) has parameter \$img with no type specified.#'
-    - '#Method RoxyImage\:\:SetAlpha\(\) has no return type specified.#'
-    - '#Method RoxyImage\:\:SetAlpha\(\) has parameter \$img with no type specified.#'
-    - '#Method RoxyImage\:\:GetImage\(\) has no return type specified.#'

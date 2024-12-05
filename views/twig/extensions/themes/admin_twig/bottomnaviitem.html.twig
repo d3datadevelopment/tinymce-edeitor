@@ -1,0 +1,23 @@
+{% extends "bottomnaviitem.html.twig" %}
+
+{% block admin_bottomnaviitem %}
+
+    {{ parent() }}
+
+    {% if method_exists(oViewConf,'getTinyMceIncludes') %}
+        {% for tmceinclude in oViewConf.getTinyMceIncludes() %}
+            {{ script({ include: tmceinclude|raw }) }}
+        {% endfor %}
+    {% endif %}
+
+    {% if method_exists(oViewConf,'getTinyMceScripts') %}
+        {% for tmcescript in oViewConf.getTinyMceScripts() %}
+            {{ script({ add: tmcescript|raw }) }}
+        {% endfor %}
+    {% endif %}
+
+    {% if method_exists(oViewConf,'getTinyMceInitCode') %}
+        {{ oViewConf.getTinyMceInitCode()|raw }}
+    {% endif %}
+
+{% endblock %}

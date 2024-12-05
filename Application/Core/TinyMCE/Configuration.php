@@ -1,22 +1,14 @@
 <?php
 
 /**
- * This file is part of O3-Shop TinyMCE editor module.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, version 3.
- *
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * You should have received a copy of the GNU General Public License
- * along with O3-Shop.  If not, see <http://www.gnu.org/licenses/>
- *
- * @copyright  Copyright (c) 2022 Marat Bedoev, bestlife AG
- * @copyright  Copyright (c) 2023 O3-Shop (https://www.o3-shop.com)
- * @license    https://www.gnu.org/licenses/gpl-3.0  GNU General Public License 3 (GPLv3)
+ * @copyright (C) 2022 Marat Bedoev, bestlife AG
+ * @copyright (C) 2023 O3-Shop (https://www.o3-shop.com)
+ * @copyright (C) D3 Data Development (Inh. Thomas Dartsch)
+ * @author    D3 Data Development - Daniel Seifert <info@shopmodule.com>
+ * @link      https://www.oxidmodule.com
  */
 
 declare(strict_types=1);
@@ -36,7 +28,6 @@ use O3\TinyMCE\Application\Core\TinyMCE\Options\InitInstanceCallback;
 use O3\TinyMCE\Application\Core\TinyMCE\Options\Language;
 use O3\TinyMCE\Application\Core\TinyMCE\Options\LicenseKey;
 use O3\TinyMCE\Application\Core\TinyMCE\Options\MaxHeight;
-use O3\TinyMCE\Application\Core\TinyMCE\Options\MaxWidth;
 use O3\TinyMCE\Application\Core\TinyMCE\Options\Menubar;
 use O3\TinyMCE\Application\Core\TinyMCE\Options\MinHeight;
 use O3\TinyMCE\Application\Core\TinyMCE\Options\OptionInterface;
@@ -52,6 +43,7 @@ use O3\TinyMCE\Application\Core\TinyMCE\Options\Skin;
 use O3\TinyMCE\Application\Core\TinyMCE\Options\Toolbar;
 use O3\TinyMCE\Application\Core\TinyMCE\Options\ToolbarMode;
 use O3\TinyMCE\Application\Core\TinyMCE\Options\ToolbarSticky;
+use OxidEsales\Eshop\Core\Registry;
 
 class Configuration
 {
@@ -114,6 +106,8 @@ class Configuration
         foreach ($this->options as $param => $value) {
             $sConfig .= "$param: $value, ";
         }
+
+        Registry::getLogger()->debug('TinyMCE configuration', [$sConfig]);
 
         return $sConfig;
     }

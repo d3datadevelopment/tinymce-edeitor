@@ -1,37 +1,30 @@
 <?php
 
 /**
- * This file is part of O3-Shop TinyMCE editor module.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, version 3.
- *
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * You should have received a copy of the GNU General Public License
- * along with O3-Shop.  If not, see <http://www.gnu.org/licenses/>
- *
- * @copyright  Copyright (c) 2022 Marat Bedoev, bestlife AG
- * @copyright  Copyright (c) 2023 O3-Shop (https://www.o3-shop.com)
- * @license    https://www.gnu.org/licenses/gpl-3.0  GNU General Public License 3 (GPLv3)
+ * @copyright (C) 2022 Marat Bedoev, bestlife AG
+ * @copyright (C) 2023 O3-Shop (https://www.o3-shop.com)
+ * @copyright (C) D3 Data Development (Inh. Thomas Dartsch)
+ * @author    D3 Data Development - Daniel Seifert <info@shopmodule.com>
+ * @link      https://www.oxidmodule.com
  */
 
 declare(strict_types=1);
 
 use O3\TinyMCE\Application\Core\Setup\Events;
+use O3\TinyMCE\Application\Model\Constants;
 
 $sMetadataVersion = '2.1';
 $aModule          = [
-    'id' => 'o3-tinymce-editor',
+    'id' => Constants::OXID_MODULE_ID,
     'title' => 'TinyMCE Editor',
-    'description' => 'TinyMCE 6 integration for O3-Shop, ported to OXID eShop',
-    'thumbnail' => 'logo.png',
-    'version' => '1.1.0',
+    'description' => 'TinyMCE integration for OXID eShop',
+    'thumbnail' => 'picture.svg',
+    'version' => '2.0.0',
     'author' => 'D3 Data Development, O3-Shop, Marat Bedoev',
-    'url' => 'https://www.o3-shop.com/',
+    'url' => 'https://www.d3data.de/',
     'extend' => [
         OxidEsales\Eshop\Core\ViewConfig::class => O3\TinyMCE\Application\Core\ViewConfig::class,
     ],
@@ -39,14 +32,14 @@ $aModule          = [
         'tinyfilemanager'   => O3\TinyMCE\Application\Controller\Admin\TinyFileManager::class,
     ],
     'templates' => [
-        'TinyFilemanager.tpl'   => 'o3-shop/tinymce-editor/Application/views/admin/filemanager.tpl',
-        'EditorSwitch.tpl'      => 'o3-shop/tinymce-editor/Application/views/admin/editorswitch.tpl',
+        '@' . Constants::OXID_MODULE_ID.'/admin/filemanager.tpl'   => 'views/smarty/admin/filemanager.tpl',
+        '@' . Constants::OXID_MODULE_ID.'/admin/editorswitch.tpl'      => 'views/smarty/admin/editorswitch.tpl',
     ],
     'blocks' => [
         [
-            'template' => 'bottomnaviitem.tpl',
-            'block' => 'admin_bottomnaviitem',
-            'file' => 'Application/views/blocks/admin/bottomnaviitem_admin_bottomnaviitem.tpl',
+            'template'  => 'bottomnaviitem.tpl',
+            'block'     => 'admin_bottomnaviitem',
+            'file'      => 'views/smarty/blocks/admin/bottomnaviitem_admin_bottomnaviitem.tpl',
         ],
     ],
     'settings' => [
@@ -70,10 +63,10 @@ $aModule          = [
             'type' => 'bool',
             'value' => true,
             'position' => 2,
-        ]
+        ],
     ],
     'events'       => [
         'onActivate'   => Events::class.'::onActivate',
-        'onDeactivate' => Events::class.'::onDeactivate'
+        'onDeactivate' => Events::class.'::onDeactivate',
     ],
 ];
